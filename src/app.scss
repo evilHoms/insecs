@@ -22,7 +22,7 @@
 .top {
   position: relative;
 
-  background-image: url('./images/topbg.jpeg');
+  background-image: url('images/topbg.jpeg');
   background-size: cover;
 
   color: #fff;
@@ -399,6 +399,14 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #fff;
+
+  transition: 0.5s;
+}
+
+.advantages__form__btn--send:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .adventages__title {
@@ -461,7 +469,7 @@
   background: url('./images/guaranteetree.png') bottom center no-repeat,
               url('./images/circles.png') center 58.5% no-repeat;
 
-  background-color: #5c6886;
+  background-color: #566888;
 }
 
 .guarantee__title {
@@ -498,7 +506,7 @@
 // ===========================================================
 
 .murder {
-  padding: 70px 0 90px;
+  padding: 70px 0 120px;
   text-align: center;
 
   background: #f6f6f6 url('./images/murderbg.png');
@@ -581,6 +589,96 @@
   background-position: center 70%;
 }
 
+// =============================================================
+// =======================  WeHandle  ==========================
+// =============================================================
+
+.we-handle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 100px 0;
+}
+
+.we-handle__title {
+  padding-bottom: 30px;
+  margin-bottom: 55px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.we-handle__first-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.we-handle__second-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.we-handle__first-group__col-one {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.we-handle__first-group__col-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.we-handle__first-group__col-three {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.we-handle img {
+  box-shadow: 0 0 30px 30px rgba(0, 0, 0, 0.05);
+}
+
+.we-handle__rooms {
+  margin-bottom: 60px;
+}
+
+.we-handle__house {
+  margin-bottom: 75px;
+}
+
+.we-handle__logo {
+  margin-bottom: 80px;
+}
+
+.we-handle__logo img {
+  box-shadow: none;
+}
+
+.we-handle__cafe {
+  margin-top: 80px;
+}
+
+.we-handle__areas {
+  margin-right: 30px;
+}
+
+.we-handle__item__title {
+  margin-bottom: 20px;
+  width: 300px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+  color: #658fdd;
+}
 
 
 

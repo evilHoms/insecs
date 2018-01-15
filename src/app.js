@@ -5,7 +5,9 @@ import './app.scss';
 const state = {
   isMenu: false
 };
-
+//////////////////
+// Выпадающее меню
+//////////////////
 const menuBtn = document.querySelector('.top__menu');
 const menu = document.querySelector('.top__hidden-menu');
 const menuCloseBtn = document.querySelector('.top__hidden-menu__close--btn');
@@ -26,6 +28,9 @@ function onMenuClick(e) {
   }
 }
 
+//////////////////////////////////////
+// Стартовый дропдаун с выбором города
+//////////////////////////////////////
 const dropdown = document.querySelector('.choose-the-city__select');
 const startingChooseTheCity = document.querySelector('.choose-the-city');
 dropdown.hide = true;
@@ -57,6 +62,9 @@ function onDropdownClick(e) {
   }
 }
 
+/////////////////////////////////////////////////////////
+// Действия при закрытии стартового окна с выбором города
+/////////////////////////////////////////////////////////
 const dropdownCloseBtn = document.querySelector('.choose-the-city__close');
 dropdownCloseBtn.addEventListener('click', onCloseClick);
 
@@ -84,4 +92,13 @@ function setDataFromCity(city) {
       topCity.textContent = 'г. Калуга';
       break;
   }
+}
+
+const phoneFormSendBtn = document.querySelector('.advantages__form__btn--send');
+const phoneFormInput = document.querySelector('#advantages__form__phone')
+phoneFormSendBtn.addEventListener('click', onSendClick);
+
+function onSendClick(e) {
+  e.preventDefault();
+  console.log(`Entered phone number: ${phoneFormInput.value}`);
 }
