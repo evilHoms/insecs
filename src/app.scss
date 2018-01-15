@@ -1,0 +1,599 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  min-width: 1280px;
+}
+
+.content {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+// ========================================================
+// =======================  Top  ==========================
+// ========================================================
+
+.top {
+  position: relative;
+
+  background-image: url('./images/topbg.jpeg');
+  background-size: cover;
+
+  color: #fff;
+
+  overflow: hidden;
+}
+
+.top::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 0;
+	height: 0;
+	border-bottom: 80px solid #fff; 
+	border-right: 50vw solid transparent;
+
+  background-color: transparent;
+}
+
+.top::before {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: block;
+  width: 0;
+	height: 0;
+	border-bottom: 80px solid #fff; 
+	border-left: 50vw solid transparent;
+
+  background-color: transparent;
+}
+
+.choose-the-city {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 1;
+}
+
+.choose-the-city__content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px 100px 100px;
+
+  background: #fff;
+}
+
+.choose-the-city__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  padding: 10px;
+  border: none;
+
+  background-image: url('./images/cross.png');
+  background-color: #fff;
+
+  cursor: pointer;
+}
+
+.choose-the-city__title {
+  padding-bottom: 20px;
+
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+}
+
+.choose-the-city__select {
+  position: absolute;
+  top: 50%;
+
+  width: 60%;
+  padding: 10px 20px;
+  border: 1px solid #959595;
+  border-radius: 20px;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.choose-the-city__dropdown--btn {
+  position: absolute;
+  right: 7px;
+  top: 18px;
+
+  padding: 10px;
+  border: none;
+
+  background-color: transparent;
+  background-image: url('./images/arrow.png');
+  background-repeat: no-repeat;
+}
+
+.choose-the-city__option {
+  padding: 3px 8px 5px;
+
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #959595;
+}
+
+.top__main-header {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 30px;
+  margin: 0 70px 80px;
+}
+
+.top__city-logo--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.top__tel-menu--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.top__menu {
+  width: 40px;
+  height: 23px;
+}
+
+.top__menu:hover {
+  cursor: pointer;
+}
+
+.top__logo--image {
+  width: 240px;
+}
+
+.top__tel {
+  display: flex;
+  align-items: center;
+
+  margin-right: 70px;
+
+  font-size: 24px;
+}
+
+.top__tel--text {
+  font-family: 'Roboto', sans-serif;
+}
+
+.top__tel--image {
+  margin-right: 10px;
+}
+
+.top__city {
+  display: flex;
+  align-items: center;
+
+  margin-left: 100px;
+}
+
+.top__city--text {
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top__social {
+  position: absolute;
+  top: 135px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top__vk {
+  margin-bottom: 20px;
+}
+
+.top__hidden-menu {
+  position: absolute;
+  top: 0;
+  right: -100%;
+
+  padding: 130px 60px 60px 80px;
+
+  background: #fff;
+
+  transition: 0.5s;
+}
+
+.hidden-menu--shown {
+  right: 0;
+}
+
+.top__hidden-menu li {
+  list-style-type: none;
+  text-align: right;
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top__hidden-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+.top__hidden-menu a:hover {
+  border-bottom: 2px solid #ffa200;
+}
+
+.top__hidden-menu__close--btn {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  
+  padding: 10px;
+  border: none;
+
+  background: transparent url('./images/cross.png');
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+.top__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top__main-title {
+  text-align: center;
+  font-size: 72px;
+  font-family:'FuturaFuturisC', sans-serif;
+}
+
+.top__title-text {
+  margin-bottom: 25px;
+
+  color: #ffa200;
+  font-size: 42px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.top__features li {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  list-style-type: none;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top__features {
+  margin-bottom: 200px;
+}
+
+.top__features li::before {
+  position: absolute;
+  left: -35px;
+
+  display: block;
+  padding: 10px;
+  content: "";
+
+  background-image: url('./images/ok.png');
+}
+
+// ===============================================================
+// =======================  Advantages  ==========================
+// ===============================================================
+
+.advantages {
+  position: relative;
+
+  padding: 220px 0 0;
+  text-align: center;
+
+  background: url('./images/homebg.png') 0 0 no-repeat,
+              url('./images/tree.png') 100% 0 no-repeat,
+              url('./images/grass.png') center 101% no-repeat;
+
+  background-size: auto, auto, contain;
+}
+
+.advantages__consult-form {
+  position: absolute;
+  top: -170px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 65px 120px 120px;
+
+  background-image: url('./images/consultform.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.advantages__consult-form--title {
+  margin-bottom: 35px;
+
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.advantages__form {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.advantages__form__text {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+#advantages__form__phone {
+  padding: 18px 50px;
+  border-radius: 40px;
+  border: none;
+
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.advantages__form__btn--send {
+  border: none;
+  padding: 18px 50px;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.adventages__title {
+  padding-bottom: 30px;
+  margin-bottom: 70px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.adventages__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 0 100px 195px;
+}
+
+.adventages__item {
+  width: 30%;
+  padding:  40px 40px 0px;
+}
+
+.adventages__item__image {
+  height: 70px;
+}
+
+.adventages__item__title {
+  margin: 15px 0 10px;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.adventages__item__text {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+// ==============================================================
+// =======================  Guarantee  ==========================
+// ==============================================================
+
+.guarantee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 90px 0px 380px;
+
+  color: #fff;
+
+  
+
+  background: url('./images/guaranteetree.png') bottom center no-repeat,
+              url('./images/circles.png') center 58.5% no-repeat;
+
+  background-color: #5c6886;
+}
+
+.guarantee__title {
+  border-bottom: 1px solid #ffa200;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 140px;
+}
+
+.guarantee__achievements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.guarantee__exp {
+  border-bottom: 1px solid #ffa200;
+  padding-left: 10px;
+
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.guarantee__clients {
+  border-bottom: 1px solid #ffa200;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+// ===========================================================
+// =======================  Murder  ==========================
+// ===========================================================
+
+.murder {
+  padding: 70px 0 90px;
+  text-align: center;
+
+  background: #f6f6f6 url('./images/murderbg.png');
+  background-size: cover;
+}
+
+.murder__title {
+  margin-bottom: 70px;
+  padding-bottom: 30px;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-size: 48px;
+}
+
+.murder__tagets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 210px;
+}
+
+.murder__item__title {
+  margin-bottom: 10px;
+
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mite {
+  background-image: url('./images/mite.png');
+}
+
+.bedbug {
+  background-image: url('./images/bedbug.png');
+}
+
+.cockroach {
+  background-image: url('./images/cockroach.png');
+}
+
+.ant {
+  background-image: url('./images/ant.png');
+}
+
+.flea {
+  background-image: url('./images/flea.png');
+}
+
+.mole {
+  background-image: url('./images/mole.png');
+}
+
+.rat {
+  background-image: url('./images/rat.png');
+}
+
+.hornet {
+  background-image: url('./images/hornet.png');
+}
+
+.smell {
+  background-image: url('./images/smell.png');
+}
+
+.murder__item {
+  width: 160px;
+  height: 160px;
+  margin:  0 5% 40px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+
+  background-color: #687390;
+  background-repeat: no-repeat;
+  background-position: center 70%;
+}
+
+
+
+
+
+
+
+strong {
+  color: #ffa200;
+  font-size: 48px;
+}
+
+.hidden {
+  display: none;
+}
+
+@font-face { font-family: 'FuturaFuturisC';  src: local('FuturaFuturisC'), url('https://nomail.com.ua/files/woff/c4f946f3155e4739f165748c2afaeaf3.woff') format('woff'); }
