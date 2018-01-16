@@ -94,6 +94,9 @@ function setDataFromCity(city) {
   }
 }
 
+//////////////////////////////////////////////////////////
+// Действия при отправке телефона в форме блока advantages
+//////////////////////////////////////////////////////////
 const phoneFormSendBtn = document.querySelector('.advantages__form__btn--send');
 const phoneFormInput = document.querySelector('#advantages__form__phone')
 phoneFormSendBtn.addEventListener('click', onSendClick);
@@ -101,4 +104,16 @@ phoneFormSendBtn.addEventListener('click', onSendClick);
 function onSendClick(e) {
   e.preventDefault();
   console.log(`Entered phone number: ${phoneFormInput.value}`);
+}
+
+////////////////////////////////////////////////////////////
+// Действия при отправке телефона в форме блока leavecontact
+////////////////////////////////////////////////////////////
+const phoneFormSendBtnC = document.querySelector('.leavecontact__form__btn--send');
+const phoneFormInputC = document.querySelector('#leavecontact__form__phone')
+phoneFormSendBtnC.addEventListener('click', onSendClickC);
+
+function onSendClickC(e) {
+  e.preventDefault();
+  console.log(`Entered phone number: ${phoneFormInputC.value}`);
 }

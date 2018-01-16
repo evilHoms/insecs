@@ -391,7 +391,7 @@
 
 .advantages__form__btn--send {
   border: none;
-  padding: 18px 50px;
+  padding: 18px 30px;
 
   border-radius: 40px;
   background-color: #ffa200;
@@ -507,7 +507,7 @@
 // ===========================================================
 
 .murder {
-  padding: 70px 0 120px;
+  padding: 70px 0 105px;
   text-align: center;
 
   background: #f6f6f6 url('./images/murderbg.png');
@@ -681,8 +681,287 @@
   color: #658fdd;
 }
 
+// =================================================================
+// =======================  LeaveContact  ==========================
+// =================================================================
+
+.leave-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 280px;
+
+  background-image: url('./images/leavecontactbg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto 90%;
+}
+
+.leave-contact__consult-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  max-width: 420px;
+  margin: 100px 480px 0 0;
+  padding: 65px 60px 60px;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url('./images/leavecontactform.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 30px 15px rgba($color: #000000, $alpha: 0.1);
+}
+
+.leave-contact__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#leavecontact__form__phone {
+  padding: 18px 50px;
+  margin-bottom: 40px;
+  border-radius: 40px;
+  border: none;
+
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.leavecontact__form__btn--send {
+  border: none;
+  padding: 18px 30px;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+// =============================================================
+// =======================  HowWorks  ==========================
+// =============================================================
+
+.how-works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 95px 0 50px;
+
+  background-color: #687390;
+}
+
+.how-works__title {
+  padding-bottom: 30px;
+  margin-bottom: 55px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #fff;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.how-works__steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 0 40px 0 20px;
+
+}
+
+.how-works__steps--item {
+  text-align: center;
+  padding-top: 170px;
+  width: 24%;
+  margin: 0 4% 80px;
+
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.how-works__steps--item:nth-child(1) {
+  background: url('./images/howworksfirst.png') 30% top no-repeat;
+}
+
+.how-works__steps--item:nth-child(2) {
+  background: url('./images/howworkstwo.png') 30% top no-repeat;
+}
+
+.how-works__steps--item:nth-child(3) {
+  background: url('./images/howworksthree.png') 30% top no-repeat;
+}
+
+.how-works__steps--item:nth-child(4) {
+  background: url('./images/howworksfour.png') 30% top no-repeat;
+}
+
+.how-works__steps--item:nth-child(5) {
+  background: url('./images/howworksfive.png') 30% top no-repeat;
+}
+
+.how-works__steps--item:nth-child(6) {
+  background: url('./images/howworkssix.png') 30% top no-repeat;
+}
+
+// ===============================================================
+// =======================  Calculator  ==========================
+// ===============================================================
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 90px 0 100px;
+}
+
+.calculator__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #000;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.big-text {
+  font-size: 48px;
+}
+
+.calculator--item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 0 55px;
+
+  width: 770px;
 
 
+  background-color: #e8e8e8;
+}
+
+.calculator__reset--btn {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+
+  background: transparent;
+  border: none;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #5c5c5c;
+
+  cursor: pointer;
+}
+
+.calculator__step {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+
+  padding-bottom: 15px;
+}
+
+.calculator__step-name {
+  padding-bottom: 40px;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #555555;
+}
+
+.calculator__progress-bar {
+  height: 150px;
+  width: 105%;
+  padding-top: 40px;
+  padding-left: 100px;
+  margin-bottom: 50px;
+
+  background: linear-gradient(90deg, #d4876e, #875259);
+}
+
+.calculator__progress-bar__line {
+  height: 70px;
+  background-color: #fff;
+  width: 5px;
+}
+
+.calculator__controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 90%;
+}
+
+.calculator__next--btn {
+  border: none;
+  padding: 18px 0;
+  text-align: center;
+  width: 250px;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+.calculator__next--btn:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.calculator__select {
+  width: 300px;
+  padding: 18px 0 18px 50px;
+  border: 1px solid #959595;
+  border-radius: 30px;
+
+  background: #fff;
+  background-image: url('./images/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #929292;
+
+  cursor: pointer;
+}
 
 
 
