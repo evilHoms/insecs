@@ -36,9 +36,23 @@
           <!-- Сюда добавляем города. В js файле, по атрибуту data-city
                определяются данные для заполнения. -->
           <div class="choose-the-city__option selected" data-city="moscow">Москва</div>
-          <div class="choose-the-city__option hidden" data-city="tula">Тульская область</div>
+          <div class="choose-the-city__option hidden" data-city="moscobl">Моск. обл.</div>
+          <div class="choose-the-city__option hidden" data-city="novomoscovsk">Новомосковск</div>
+          <div class="choose-the-city__option hidden" data-city="donskoi">Донской</div>
+          <div class="choose-the-city__option hidden" data-city="yzlovaia">Узловая</div>
+          <div class="choose-the-city__option hidden" data-city="kimovsk">Кимовск</div>
+          <div class="choose-the-city__option hidden" data-city="tula">Тула</div>
+          <div class="choose-the-city__option hidden" data-city="shekino">Щекино</div>
+          <div class="choose-the-city__option hidden" data-city="bolohovo">Болохово</div>
+          <div class="choose-the-city__option hidden" data-city="kireevsk">Киреевск</div>
+          <div class="choose-the-city__option hidden" data-city="aleksin">Алексин</div>
+          <div class="choose-the-city__option hidden" data-city="efremov">Ефремов</div>
+          <div class="choose-the-city__option hidden" data-city="iasnogorsk">Ясногорск</div>
           <div class="choose-the-city__option hidden" data-city="razan">Рязань</div>
           <div class="choose-the-city__option hidden" data-city="kaluga">Калуга</div>
+          <div class="choose-the-city__option hidden" data-city="zheleznogorsk">Железногорск</div>
+          <div class="choose-the-city__option hidden" data-city="bransk">Брянск</div>
+          <div class="choose-the-city__option hidden" data-city="orel">Орел</div>
         </div>
       </section>
     </div>
@@ -57,7 +71,7 @@
             <img src="./images/citypointer.png" alt="">
           </div>
           <div class="top__city--text">
-            г. Москва
+            Москва
           </div>
         </div>
 
@@ -79,10 +93,10 @@
         </div>
 
         <div class="top__social">
-          <a href="#" class="top__vk">
+          <a href="https://vk.com/club153090597" class="top__vk">
             <img src="./images/vk.png" alt="ссылка вконтакте">
           </a>
-          <a href="" class="top__fb">
+          <a href="" class="top__fb hidden">
             <img src="./images/fb.png" alt="ссылка фейсбук">
           </a>
         </div>
@@ -445,7 +459,7 @@
         Новый расчет
       </button>
       <div class="calculator__step">
-        Шаг 1 из 4
+        Шаг <span class="step">1</span> из 4
       </div>
       <h3 class="calculator__step-name">
         Выберите тип вредителя
@@ -454,13 +468,197 @@
         <div class="calculator__progress-bar__line">
         </div>
       </div>
-      <div class="calculator__controls">
+
+      <div class="calculator__controls insecs">
         <div class="calculator__select">
-          Не выбрано
+          <div class="calculator__option selected" data-city="null">Не выбрано</div>
+          <div class="calculator__option hidden" data-city="cockroach">Тараканы</div>
+          <div class="calculator__option hidden" data-city="bedbug">Клопы</div>
+          <div class="calculator__option hidden" data-city="ant">Муравьи</div>
+          <div class="calculator__option hidden" data-city="rat">Грызуны</div>
+          <div class="calculator__option hidden" data-city="insec">Насекомые</div>
         </div>
         <button class="calculator__next--btn">
           Далее
         </button>
+      </div>
+
+      <div class="calculator__controls category hidden">
+        <div class="calculator__select">
+          <div class="calculator__option selected" data-city="null">Не выбрано</div>
+          <div class="calculator__option hidden" data-city="room">Квартира</div>
+          <div class="calculator__option hidden" data-city="house">Дом</div>
+          <div class="calculator__option hidden" data-city="area">Участок</div>
+          <div class="calculator__option hidden" data-city="entity">Юр. лицо</div>
+        </div>
+        <button class="calculator__next--btn">
+          Далее
+        </button>
+      </div>
+
+      <div class="calculator__controls size hidden">
+        <input class="calculator__input">
+        <button class="calculator__next--btn">
+          Далее
+        </button>
+      </div>
+
+      <div class="calculator__controls sizeRooms hidden">
+        <div class="calculator__select">
+          <div class="calculator__option selected" data-city="null">Не выбрано</div>
+          <div class="calculator__option hidden" data-city="rm">Комната</div>
+          <div class="calculator__option hidden" data-city="1x">1 комнатная</div>
+          <div class="calculator__option hidden" data-city="2x">2-х комнатная</div>
+          <div class="calculator__option hidden" data-city="3x">3-х комнатная</div>
+          <div class="calculator__option hidden" data-city="4x">4-х комнатная</div>
+        </div>
+        <button class="calculator__next--btn">
+          Далее
+        </button>
+      </div>
+
+      <div class="calculator__controls phone hidden">
+        <input class="calculator__input" placeholder="Ваш телефон...">
+        <button class="calculator__last--btn">
+          Отправить заявку
+        </button>
+      </div>
+
+      <!-- <div class="calculator__controls sent hidden">
+
+      </div> -->
+
+    </div>
+
+    <p class="calculator__text-after">
+      При единовременном заказе трех и более услуг, скидка до 40%!
+    </p>
+
+  </section>
+
+  <!-- ======================================== -->
+  <!-- ============= Sertificates ============= -->
+  <!-- ======================================== -->
+
+  <section class="sertificates wrapper">
+
+    <h2 class="sertificates__title">
+      Наши сертификаты
+    </h2>
+
+    <article class="sertificates__list content">
+      <img src="./images/sertificate.jpg" alt="sertifacate" class="sertificates__item">
+      <img src="./images/sertificate.jpg" alt="sertifacate" class="sertificates__item">
+      <img src="./images/sertificate.jpg" alt="sertifacate" class="sertificates__item">
+    </article>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- ============= Preparing ============= -->
+  <!-- ===================================== -->
+
+  <section class="preparing wrapper">
+
+    <h2 class="preparing__title">
+      Подготовка к дезинсекции
+    </h2>
+
+    <div class="preparing__stages content">
+
+      <section class="preparing__before">
+        <h3 class="preparing__before__title">
+          Перед обработкой
+        </h3>
+        <ul class="preparing__before__list">
+          <li class="preparing__list--item">
+            Уберите посуду, личные вещи и предметы гигиены. Если нет возможности вынести, то упакуйте их в полиэтиленовые мешки или спрячьте в коробки.
+          </li>
+          <li class="preparing__list--item">
+            Продукты питания поместите в холодильник.
+          </li>
+          <li class="preparing__list--item">
+            Удалите из помещения домашних животных. Если это невозможно (например, стационарный большой аквариум), то герметично закройте на время обработки.
+          </li>
+          <li class="preparing__list--item">
+            Разложите диваны, кресла, кровати. Откройте дверцы шкафов.
+          </li>
+          <li class="preparing__list--item">
+            Обеспечьте доступ к местам, где могут прятаться паразиты. В идеале – отодвинуть мебель от стен и открутить плинтуса, но это не обязательно.
+          </li>
+          <li class="preparing__list--item">
+            Позаботьтесь о том, чтобы 3-4 часа помещение оставалось закрытым.
+          </li>
+        </ul>
+      </section>
+
+      <section class="preparing__after">
+        <h3 class="preparing__before__title">
+          После обработки
+        </h3>
+        <ul class="preparing__after__list">
+          <li class="preparing__list--item">
+            Оставьте паразитов на несколько часов наедине с отравой. Яд проникнет во все щели, дойдет до каждого таракана, муравья или клопа.
+          </li>
+          <li class="preparing__list--item">
+            Проветрите помещение. 2 часа хватает для выветривания запаха.
+          </li>
+          <li class="preparing__list--item">
+            Пропылесосьте мебель, полы, шкафы, обои, подоконники, чтобы убрать мертвых насекомых и личинки.
+          </li>
+          <li class="preparing__list--item">
+            Разведите 40 г соды в литре воды, наденьте резиновые перчатки и протрите открытые поверхности. Важно стереть частицы отравляющего вещества с поверхности, чтобы они не попали на кожу, но сохранить их концентрацию внутри изделий.
+          </li>
+          <li class="preparing__list--item">
+            Постирайте при температуре не менее 80 градусов постельное белье, одежду, занавески. Вещи, которые нельзя стирать, подержите над паром или обработайте парогенератором.
+          </li>
+          <li class="preparing__list--item">
+            Мыть полы и проводить генеральную уборку следует не ранее, чем через 1-2 недели. До этого желательно не трогать обработанные участки и почаще мыть руки.
+          </li>
+          <li class="preparing__list--item">
+            Если все делать правильно, то периодичность дезинсекций увеличивается и появление насекомых зависит только от внешних факторов.
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <button class="preparing__call--btn">
+      Вызвать специалиста
+    </button>
+
+  </section>
+
+  <!-- =================================== -->
+  <!-- ============= Rewiews ============= -->
+  <!-- =================================== -->
+
+  <section class="rewiews wrapper">
+
+    <h2 class="rewiews__title">
+      Отзывы клиентов
+    </h2>
+
+    <div class="rewiews__items--wrapper content">
+      <div class="controlls">
+        <button class="rewiews__btn--prev">
+          н
+        </button>
+        <button class="rewiews__btn--next">
+          в
+        </button>
+      </div>
+      <div class="rewiews__item">
+        <h3 class="rewiews__item__title">
+          Александр (г. Тула)
+        </h3>
+        <p class="rewiews__item__text">
+          Хотелось бы выразить особую признательность фирме «Центр Дезинсекции» за помощь в решении нашей проблемы. Живём с женой в двухкомнатной квартире уже много лет и мучаемся от регулярного нашествия тараканов в наш дом. Своими силами уничтожить вредных насекомых 
+          в нашем жилище не получалось, пока соседи не посоветовали обратиться к профессионалам. Ребята быстро приехали по звонку и решили нашу проблему за час. Огромное спасибо.
+        </p>
+        <div class="rewiews__item__data">
+          25 ноября 2017
+        </div>
       </div>
     </div>
 

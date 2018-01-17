@@ -143,11 +143,16 @@
 }
 
 .choose-the-city__option {
-  padding: 3px 8px 5px;
+  padding: 3px 8px 3px;
 
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   color: #959595;
+}
+
+.choose-the-city__option:hover {
+  box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: 0.1);
+  background-color: #eee;
 }
 
 .top__main-header {
@@ -205,6 +210,8 @@
   align-items: center;
 
   margin-left: 100px;
+
+  cursor: pointer;
 }
 
 .top__city--text {
@@ -750,6 +757,12 @@
   transition: 0.5s;
 }
 
+.leavecontact__form__btn--send:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
+}
+
 // =============================================================
 // =======================  HowWorks  ==========================
 // =============================================================
@@ -832,7 +845,7 @@
   flex-direction: column;
   align-items: center;
 
-  padding: 90px 0 100px;
+  padding: 90px 0 90px;
 }
 
 .calculator__title {
@@ -860,12 +873,13 @@
   flex-direction: column;
   align-items: center;
 
-  padding: 30px 0 55px;
+  margin-bottom: 65px;
+  padding: 30px 0 75px;
 
   width: 770px;
 
-
   background-color: #e8e8e8;
+  box-shadow: 0 15px 30px 10px rgba($color: #000000, $alpha: 0.2);
 }
 
 .calculator__reset--btn {
@@ -915,11 +929,37 @@
 }
 
 .calculator__controls {
+  position: relative;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 
   width: 90%;
+  padding-right: 50px;
+}
+
+.calculator__last--btn {
+  border: none;
+  padding: 22px 0;
+  text-align: center;
+  width: 250px;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+.calculator__last--btn:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .calculator__next--btn {
@@ -946,6 +986,10 @@
 }
 
 .calculator__select {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+
   width: 300px;
   padding: 18px 0 18px 50px;
   border: 1px solid #959595;
@@ -962,6 +1006,216 @@
 
   cursor: pointer;
 }
+
+.calculator__input {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+
+  width: 300px;
+  padding: 18px 0 18px 50px;
+  border: 1px solid #959595;
+  border-radius: 30px;
+
+  background: #fff;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #929292;
+}
+
+.calculator__text-after {
+  width: 560px;
+  text-align: center;
+
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: #6894e4;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+// =================================================================
+// =======================  Sertificates  ==========================
+// =================================================================
+
+.sertificates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 90px 0 125px;
+
+  background-color: #6f7995;
+}
+
+.sertificates__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #fff;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.sertificates__list {
+  font-size: 0;
+}
+
+.sertificates__item {
+  margin: 0 5px;
+  box-shadow: 0 0 30px 10px rgba($color: #000000, $alpha: 0.1);
+}
+
+// ==============================================================
+// =======================  Preparing  ==========================
+// ==============================================================
+
+.preparing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 90px 0 125px;
+
+  background: url('./images/preparingbefore.png') left 20% no-repeat,
+              url('./images/preparingafter.png') right 80% no-repeat;
+  background-color: #efefef;
+}
+
+.preparing__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #000;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.preparing__stages {
+  display: flex;
+  flex-direction: column;
+}
+
+.preparing__before {
+  align-self: flex-end;
+  width: 47%;
+}
+
+.preparing__after {
+  align-self: flex-start;
+  width: 47%;
+}
+
+.preparing__after__list,
+.preparing__before__list {
+  padding-left: 20px;
+}
+
+.preparing__before {
+  margin-bottom: 115px;
+}
+
+.preparing__list--item {
+  position: relative;
+
+  margin-bottom: 30px;
+
+  list-style-type: none;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.preparing__list--item::before {
+  position: absolute;
+  left: -20px;
+  top: 3px;
+
+  display: block;
+  content: "";
+  padding: 5px;
+  border-radius: 50%;
+
+  background-color: #ffa200;
+}
+
+.preparing__before__title,
+.preparing__after__title {
+  margin-bottom: 50px;
+
+  font-size: 30px;;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #000;
+}
+
+.preparing__call--btn {
+  border: none;
+  padding: 18px 0;
+  text-align: center;
+  width: 320px;
+  margin-top: 90px;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+.preparing__call--btn:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+// ============================================================
+// =======================  Reviews  ==========================
+// ============================================================
+
+.rewiews {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 100px 0 170px;
+}
+
+.rewiews__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #000;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.rewiews__items--wrapper {
+  background-color: #eeeeee;
+}
+
+
 
 
 
