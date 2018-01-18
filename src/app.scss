@@ -1064,11 +1064,17 @@
 }
 
 .sertificates__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   font-size: 0;
 }
 
 .sertificates__item {
-  margin: 0 5px;
+  width: 30%;
+  height: 520px;
+  margin: 0 5px 10px;
   box-shadow: 0 0 30px 10px rgba($color: #000000, $alpha: 0.1);
 }
 
@@ -1212,8 +1218,231 @@
 }
 
 .rewiews__items--wrapper {
+  position: relative;
+
+  width: 920px;
+  padding: 40px 55px 75px;
+
   background-color: #eeeeee;
 }
+
+.rewiews__item__title {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.controlls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.controlls > button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.controlls > button:focus {
+  outline: none;
+}
+
+.rewiews__btn--prev {
+  background: url('./images/arrowback.png') no-repeat;
+  padding: 10px;
+  background-size: contain;
+}
+
+.rewiews__btn--next {
+  background-color: #000;
+  background: url('./images/arrownext.png') no-repeat;
+  padding: 10px; 
+  background-size: contain;
+}
+
+.rewiews__item__text {
+  font-family: 'PT Sans', sans-serif;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.rewiews__item__data {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+
+  font-family: 'PT Sans', sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #7f7f7f;
+}
+
+// ============================================================
+// =======================  Request  ==========================
+// ============================================================
+
+.request {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 70px 0 90px;
+
+  background-color: #556283;
+  background-image: url('./images/requestbg.png');
+  background-size: cover;
+}
+
+.request__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #fff;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.request__consult-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 65px 120px 0;
+}
+
+.request__consult-form--title {
+  margin-bottom: 35px;
+
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.request__form {
+  display: flex;
+  justify-content: space-between;
+
+  width: 95%;
+  margin-bottom: 40px;
+}
+
+.request__form__text {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+#request__form__phone {
+  padding: 18px 50px;
+  width: 300px;
+  border-radius: 40px;
+  border: none;
+
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.request__form__btn--send {
+  border: none;
+  padding: 18px 0;
+  width: 300px;
+  text-align: center;
+
+  border-radius: 40px;
+  background-color: #ffa200;
+
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+.request__form__btn--send:hover {
+  color: #ffa200;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+// ================================================================
+// =======================  OurContacts  ==========================
+// ================================================================
+
+.our-contacts {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 70px 0 90px;
+
+  background-color: #fff;
+}
+
+.our-contacts__title {
+  padding-bottom: 30px;
+  margin-bottom: 75px;
+
+  font-size: 48px;;
+  font-family: 'FuturaFuturisC', sans-serif;
+  font-weight: normal;
+  color: #000;
+
+  background-image: url('./images/underlinetitle.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.our-contacts__data {
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.our-contacts__adress,
+.our-contacts__email,
+.our-contacts__tel {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.adress__text,
+.email__text,
+.tel__text {
+  margin-left: 10px;
+}
+
+// ===========================================================
+// =======================  Footer  ==========================
+// ===========================================================
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 75px;
+
+  background-color: #687390;
+  color: #fff;
+}
+
+.main-footer__politics {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 
 

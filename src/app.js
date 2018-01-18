@@ -2,9 +2,27 @@
 
 import './app.scss';
 
+function Request(phone, type = 'не указан', category = 'не указана', size = 'не указано') {
+  const formdata = new FormData();
+  formdata.append('type', type);
+  formdata.append('phone', phone);
+  formdata.append('type', category);
+  formdata.append('phone', size);
+  const url = 'mail.php';
+  const options = { 
+    method: 'POST',
+    body: formdata
+  };
+
+  fetch(url, options)
+    .then(res => console.log(res))
+    .catch(er => console.log(er));
+}
+
 const state = {
   isMenu: false
 };
+
 //////////////////
 // Выпадающее меню
 //////////////////
@@ -31,6 +49,10 @@ function onMenuClick(e) {
 //////////////////////////////////////
 // Стартовый дропдаун с выбором города
 //////////////////////////////////////
+const tel = document.querySelector('.top__tel--text');
+const contactTel = document.querySelector('.tel__text');
+const contactAdress = document.querySelector('.adress__text');
+const contactMap = document.querySelector('.our-cntacts__data__map');
 const dropdown = document.querySelector('.choose-the-city__select');
 const startingChooseTheCity = document.querySelector('.choose-the-city');
 dropdown.hide = true;
@@ -75,24 +97,102 @@ function onCloseClick(e) {
 }
 
 function setDataFromCity(city) {
-  console.log(dropdown.querySelector('.selected'));
   const topCity = document.querySelector('.top__city--text');
   topCity.textContent = dropdown.querySelector('.selected').textContent;
 
-  // switch(city) {
-  //   case 'moscow':
-  //     topCity.textContent = 'г. Москва';
-  //     break;
-  //   case 'tula':
-  //     topCity.textContent = 'Тульская область';
-  //     break;
-  //   case 'razan':
-  //     topCity.textContent = 'г. Рязань';
-  //     break;
-  //   case 'kaluga':
-  //     topCity.textContent = 'г. Калуга';
-  //     break;
-  // }
+  switch(document.querySelector('.top__city--text').textContent) {
+      case 'Тула':
+      case 'Щекино':
+      case 'Болохово':
+      case 'Киреевск':
+        tel.textContent = '+7 (487) 263 67 17';
+        contactTel.textContent = '+7 (487) 263 67 17';
+        break;
+      case 'Новомосковск':
+      case 'Донской':
+      case 'Узловая':
+      case 'Кимовск':
+      case 'Алексин':
+      case 'Ефремов':
+      case 'Ясногорск':
+      case 'Железногорск':
+      case 'Брянск':
+      case 'Орел':
+      case 'Калуга':
+        tel.textContent = '+7 (800) 505 49 06';
+        contactTel.textContent = '+7 (800) 505 49 06';
+        break;
+      case 'Рязань':
+        tel.textContent = '+7 (491) 242 71 22';
+        contactTel.textContent = '+7 (491) 242 71 22';
+        break;
+      case 'Москва':
+      case 'Моск. Обл.':
+        tel.textContent = '+7 (499) 700 10 55';
+        contactTel.textContent = '+7 (499) 700 10 55';
+        contactAdress.textContent = 'г. Москва, октябрьская, 33';
+        break;
+    }
+
+    const maps = {
+      msk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.2459887661303!2d37.61096821626544!3d55.78896638056302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a05fc23869d%3A0x4d9372252746cb32!2z0J7QutGC0Y_QsdGA0YzRgdC60LDRjyDRg9C7LiwgMzMsINCc0L7RgdC60LLQsCwgMTI3MDE4!5e0!3m2!1sru!2sru!4v1516279697383" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      tyla: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.6393604630525!2d37.59063171621754!3d54.18646258016358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413440769a06c331%3A0xe354974309eb0032!2z0YPQuy4g0KTRgNGD0L3Qt9C1LCA0Miwg0KLRg9C70LAsINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC7LiwgMzAwMDM0!5e0!3m2!1sru!2sru!4v1516280023790" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      aliksin: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2317.028274743489!2d37.06479381622672!3d54.49772478023651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4134f0df75e7c90b%3A0x5354eab5eded279!2z0YPQuy4g0JvQtdC90LjQvdCwLCAyMiwg0JDQu9C10LrRgdC40L0sINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC7LiwgMzAxMzYy!5e0!3m2!1sru!2sru!4v1516280145559" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      nvmsk: '',
+      zhelenogorsk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.6282705402023!2d35.36121051616328!3d52.340889479780735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412dd75cc048f745%3A0xb4984b0c289c09d8!2z0YPQuy4g0JPQsNCz0LDRgNC40L3QsCwgMTEsINCW0LXQu9C10LfQvdC-0LPQvtGA0YHQuiwg0JrRg9GA0YHQutCw0Y8g0L7QsdC7LiwgMzA3MTcx!5e0!3m2!1sru!2sru!4v1516280191400" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      bransk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2387.3530267365513!2d34.351438316189686!3d53.24737297995838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412d585c184dc599%3A0xbe2b4bdb6c0b1bee!2z0YPQuy4g0KHQvtCy0LXRgtGB0LrQsNGPLCAxNywg0JHRgNGP0L3RgdC6LCDQkdGA0Y_QvdGB0LrQsNGPINC-0LHQuy4sIDI0MTA1MA!5e0!3m2!1sru!2sru!4v1516280226725" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      orel: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.4995702975098!2d36.062212216181265!3d52.9574269798994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41321a77bbe42329%3A0xa03b8eeb6451a45c!2z0YPQuy4g0JrQvtC80YHQvtC80L7Qu9GM0YHQutCw0Y8sIDUwLCDQntGA0ZHQuywg0J7RgNC70L7QstGB0LrQsNGPINC-0LHQuy4sIDMwMjAwMQ!5e0!3m2!1sru!2sru!4v1516280270877" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      kaluga: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2316.0258790720036!2d36.24834331622717!3d54.515404980240596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4134ba32c80b8a57%3A0x100b20bcc7b81b9e!2z0YPQuy4g0JrQuNGA0L7QstCwLCAxMywg0JrQsNC70YPQs9CwLCDQmtCw0LvRg9C20YHQutCw0Y8g0L7QsdC7LiwgMjQ4MDAx!5e0!3m2!1sru!2sru!4v1516280298462" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      razan: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2310.212989845948!2d39.71829821623038!3d54.61785588026517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4149e23e9afcd79f%3A0x8b088076a7af5f0d!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAsIDM4LCDQoNGP0LfQsNC90YwsINCg0Y_Qt9Cw0L3RgdC60LDRjyDQvtCx0LsuLCAzOTAwMDU!5e0!3m2!1sru!2sru!4v1516280325355" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
+    }
+
+    switch(document.querySelector('.top__city--text').textContent) {
+      case 'Тула':
+      case 'Щекино':
+      case 'Болохово':
+      case 'Киреевск':
+        contactAdress.textContent = 'Тула, Фрунзе, 42';
+        contactMap.innerHTML = maps.tyla;
+        break;
+      case 'Новомосковск':
+      case 'Донской':
+      case 'Узловая':
+      case 'Кимовск':
+        contactAdress.textContent = 'г. Новомосковск, Новомосковская, 58';
+        contactMap.innerHTML = maps.nvmsk;
+        break;
+      case 'Алексин':
+      case 'Ефремов':
+      case 'Ясногорск':
+        contactAdress.textContent = 'г. Алексин, Ленина, 22';
+        contactMap.innerHTML = maps.aliksin;
+        break;
+      case 'Железногорск':
+        contactAdress.textContent = 'г. Железногорск, Гагарина 11';
+        contactMap.innerHTML = maps.zhelenogorsk;
+        break;
+      case 'Брянск':
+        contactAdress.textContent = 'г. Брянск, Советская, 17';
+        contactMap.innerHTML = maps.bransk;
+        break;
+      case 'Орел':
+        contactAdress.textContent = 'г. Орел, Комсомольская, 50';
+        contactMap.innerHTML = maps.orel;
+        break;
+      case 'Калуга':
+        contactAdress.textContent = 'г. Калуга, Кирова, 13';
+        contactMap.innerHTML = maps.kaluga;
+        break;
+      case 'Рязань':
+        contactAdress.textContent = 'г. Рязань, Пушкина, 38';
+        contactMap.innerHTML = maps.razan;
+        break;
+      case 'Москва':
+      case 'Моск. Обл.':
+        contactAdress.textContent = 'г. Москва, октябрьская, 33';
+        contactMap.innerHTML = maps.msk;
+        break;
+    }
 }
 
 //////////////////////////////////////////////////////////
@@ -105,6 +205,7 @@ phoneFormSendBtn.addEventListener('click', onSendClick);
 function onSendClick(e) {
   e.preventDefault();
   console.log(`Entered phone number: ${phoneFormInput.value}`);
+  Request(phoneFormInput.value);
 }
 
 ////////////////////////////////////////////////////////////
@@ -117,6 +218,20 @@ phoneFormSendBtnC.addEventListener('click', onSendClickC);
 function onSendClickC(e) {
   e.preventDefault();
   console.log(`Entered phone number: ${phoneFormInputC.value}`);
+  Request(phoneFormInputC.value);
+}
+
+///////////////////////////////////////////////////////
+// Действия при отправке телефона в форме блока request
+///////////////////////////////////////////////////////
+const phoneFormSendBtnR = document.querySelector('.request__form__btn--send');
+const phoneFormInputR = document.querySelector('#request__form__phone')
+phoneFormSendBtnR.addEventListener('click', onSendClickR);
+
+function onSendClickR(e) {
+  e.preventDefault();
+  console.log(`Entered phone number: ${phoneFormInputR.value}`);
+  Request(phoneFormInputR.value);
 }
 
 ///////////////////////////////////////////
@@ -237,6 +352,10 @@ function onCalcNextBtnClick(e) {
   else {
     resetStep(e);
   }
+
+  if (this.classList.contains('calculator__last--btn')) {
+    Request(calcInfo.phone, calcInfo.insec, calcInfo.category, calcInfo.size);
+  }
 }
 
 function resetStep(e) {
@@ -256,7 +375,6 @@ function resetStep(e) {
 }
 
 function toggleSelect(e) {
-  console.log('here');
   const elements = this.querySelectorAll('.calculator__select>div');
   if (this.hide) {
     elements.forEach(el => {
@@ -267,7 +385,6 @@ function toggleSelect(e) {
   else {
 
     if (!this.hide && e.target.classList.contains('calculator__option')) {
-      console.log('here2');
       document.querySelectorAll('.calculator__select>div').forEach(el => {
         el.classList.remove('selected');
       });
