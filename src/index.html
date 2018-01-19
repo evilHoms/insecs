@@ -38,23 +38,26 @@
                определяются данные для заполнения. -->
           <div class="choose-the-city__option selected" data-city="moscow">Москва</div>
           <div class="choose-the-city__option hidden" data-city="moscobl">Моск. обл.</div>
-          <div class="choose-the-city__option hidden" data-city="novomoscovsk">Новомосковск</div>
-          <div class="choose-the-city__option hidden" data-city="donskoi">Донской</div>
-          <div class="choose-the-city__option hidden" data-city="yzlovaia">Узловая</div>
-          <div class="choose-the-city__option hidden" data-city="kimovsk">Кимовск</div>
-          <div class="choose-the-city__option hidden" data-city="tula">Тула</div>
-          <div class="choose-the-city__option hidden" data-city="shekino">Щекино</div>
-          <div class="choose-the-city__option hidden" data-city="bolohovo">Болохово</div>
-          <div class="choose-the-city__option hidden" data-city="kireevsk">Киреевск</div>
           <div class="choose-the-city__option hidden" data-city="aleksin">Алексин</div>
-          <div class="choose-the-city__option hidden" data-city="efremov">Ефремов</div>
-          <div class="choose-the-city__option hidden" data-city="iasnogorsk">Ясногорск</div>
-          <div class="choose-the-city__option hidden" data-city="razan">Рязань</div>
-          <div class="choose-the-city__option hidden" data-city="kaluga">Калуга</div>
-          <div class="choose-the-city__option hidden" data-city="zheleznogorsk">Железногорск</div>
+          <div class="choose-the-city__option hidden" data-city="bolohovo">Болохово</div>
           <div class="choose-the-city__option hidden" data-city="bransk">Брянск</div>
+          <div class="choose-the-city__option hidden" data-city="donskoi">Донской</div>
+          <div class="choose-the-city__option hidden" data-city="efremov">Ефремов</div>
+          <div class="choose-the-city__option hidden" data-city="zheleznogorsk">Железногорск</div>
+          <div class="choose-the-city__option hidden" data-city="kaluga">Калуга</div>
+          <div class="choose-the-city__option hidden" data-city="kimovsk">Кимовск</div>
+          <div class="choose-the-city__option hidden" data-city="kireevsk">Киреевск</div>
+          <div class="choose-the-city__option hidden" data-city="novomoscovsk">Новомосковск</div>
           <div class="choose-the-city__option hidden" data-city="orel">Орел</div>
+          <div class="choose-the-city__option hidden" data-city="razan">Рязань</div>
+          <div class="choose-the-city__option hidden" data-city="tula">Тула</div>
+          <div class="choose-the-city__option hidden" data-city="yzlovaia">Узловая</div>
+          <div class="choose-the-city__option hidden" data-city="shekino">Щекино</div>
+          <div class="choose-the-city__option hidden" data-city="iasnogorsk">Ясногорск</div>
         </div>
+        <button class="choose-the-city__ok">
+          OK
+        </button>
       </section>
     </div>
 
@@ -84,8 +87,16 @@
           <div class="top__tel--image">
             <img src="./images/telimage.png" alt="">
           </div>
-          <div class="top__tel--text">
-            +7 (800) 777 77 77
+          <div class="top__tel--wrapper">
+            <div class="top__tel--text">
+              +7 (499) 700 10 55
+            </div>
+            <!-- <div class="top__tel--text--all">
+              +7 (800) 505 49 06
+            </div>
+            <div class="top__tel--text--mobile">
+              +7 (905) 626 26 60
+            </div> -->
           </div>
         </div>
 
@@ -466,6 +477,7 @@
         Выберите тип вредителя
       </h3>
       <div class="calculator__progress-bar">
+        <div class="calculator__progress">0%</div>
         <div class="calculator__progress-bar__line">
         </div>
       </div>
@@ -498,7 +510,7 @@
       </div>
 
       <div class="calculator__controls size hidden">
-        <input class="calculator__input">
+        <input class="calculator__input" value="0">
         <button class="calculator__next--btn">
           Далее
         </button>
@@ -717,7 +729,18 @@
         </div>
         <div class="our-contacts__tel">
           <img src="./images/contactstel.png" alt="" class="tel__img">
-          <div class="tel__text">+7 (800) 505 49 06</div>
+          <div class="tel--wrapper">
+            <div class="tel__text">
+              +7 (499) 700 10 55
+            </div>
+            <div class="tel__text--all">
+              +7 (800) 505 49 06
+            </div>
+            <div class="tel__text--mobile">
+              +7 (905) 626 26 60
+            </div>
+          </div>
+          <!-- <div class="tel__text">+7 (800) 505 49 06</div> -->
         </div>
       </div>
       <div class="our-cntacts__data__map">
