@@ -114,7 +114,7 @@ function setDataFromCity(city) {
       case 'Щекино':
       case 'Болохово':
       case 'Киреевск':
-        tel.textContent = '+7 (487) 263 67 17';
+        // tel.textContent = '+7 (487) 263 67 17';
         contactTel.textContent = '+7 (487) 263 67 17';
         contactTel.classList.remove('hidden');
         break;
@@ -129,18 +129,18 @@ function setDataFromCity(city) {
       case 'Брянск':
       case 'Орел':
       case 'Калуга':
-        tel.textContent = '+7 (800) 505 49 06';
+        // tel.textContent = '+7 (800) 505 49 06';
         // contactTel.textContent = '+7 (800) 505 49 06';
         contactTel.classList.add('hidden');
         break;
       case 'Рязань':
-        tel.textContent = '+7 (491) 242 71 22';
+        // tel.textContent = '+7 (491) 242 71 22';
         contactTel.textContent = '+7 (491) 242 71 22';
         contactTel.classList.remove('hidden');
         break;
       case 'Москва':
       case 'Моск. Обл.':
-        tel.textContent = '+7 (499) 700 10 55';
+        // tel.textContent = '+7 (499) 700 10 55';
         contactTel.textContent = '+7 (499) 700 10 55';
         contactAdress.textContent = 'г. Москва, октябрьская, 33';
         contactTel.classList.remove('hidden');
