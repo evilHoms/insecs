@@ -20,6 +20,8 @@ function Request(phone = 'телефон не указан', type = 'вид не
   fetch(url, options)
     .then(res => console.log(res))
     .catch(er => console.log(er));
+  
+  window.scrollTo(0, 0);
 }
 
 const state = {
@@ -217,8 +219,15 @@ phoneFormSendBtn.addEventListener('click', onSendClick);
 
 function onSendClick(e) {
   e.preventDefault();
-  console.log(`Entered phone number: ${phoneFormInput.value}`);
-  Request(phoneFormInput.value);
+  if (phoneFormInput.value && phoneFormInput.value !== '') {
+    console.log(`Entered phone number: ${phoneFormInput.value}`);
+    Request(phoneFormInput.value);
+    phoneFormInput.classList.remove('red-bordered');
+  }
+  else {
+    phoneFormInput.classList.add('red-bordered');
+  }
+  
 }
 
 ////////////////////////////////////////////////////////////
@@ -230,8 +239,14 @@ phoneFormSendBtnC.addEventListener('click', onSendClickC);
 
 function onSendClickC(e) {
   e.preventDefault();
-  console.log(`Entered phone number: ${phoneFormInputC.value}`);
-  Request(phoneFormInputC.value);
+  if (phoneFormInputC.value && phoneFormInputC.value !== '') {
+    console.log(`Entered phone number: ${phoneFormInputC.value}`);
+    Request(phoneFormInputC.value);
+    phoneFormInputC.classList.add('red-bordered');
+  }
+  else {
+    phoneFormInputC.classList.add('red-bordered');
+  }
 }
 
 ///////////////////////////////////////////////////////
@@ -243,8 +258,14 @@ phoneFormSendBtnR.addEventListener('click', onSendClickR);
 
 function onSendClickR(e) {
   e.preventDefault();
-  console.log(`Entered phone number: ${phoneFormInputR.value}`);
-  Request(phoneFormInputR.value);
+  if (phoneFormInputR.value && phoneFormInputR.value !== '') {
+    console.log(`Entered phone number: ${phoneFormInputR.value}`);
+    Request(phoneFormInputR.value);
+    phoneFormInputR.classList.remove('red-bordered');
+  }
+  else {
+    phoneFormInputR.classList.add('red-bordered');
+  }
 }
 
 ///////////////////////////////////////////
@@ -311,34 +332,42 @@ function onCalcNextBtnClick(e) {
   const progress = document.querySelector('.calculator__progress');
 
   if (step < 4) {
-    calcControlls.forEach(el => {
-      el.classList.add('hidden');
-    })
 
     switch (step) {
       case 0:
         calcInfo.insec = document.querySelector('.insecs')
                                  .querySelector('.selected').textContent;
-        document.querySelector('.category').classList.remove('hidden');
-        calcStepName.textContent = steps[1];
-        calcProgress.style.width = '20%';
-        progress.textContent = '25%';
-        step ++;
+
+        if (calcInfo.insec && calcInfo.insec != 'Не выбрано') {
+          calcControlls.forEach(el => {
+            el.classList.add('hidden');
+          });
+          document.querySelector('.category').classList.remove('hidden');
+          calcStepName.textContent = steps[1];
+          calcProgress.style.width = '20%';
+          progress.textContent = '25%';
+          step ++;
+        }
         break;
       case 1:
       console.log(document)
         calcInfo.category = document.querySelector('.category')
                                     .querySelector('.selected').textContent;
         
-        calcInfo.category === 'Квартира' ? calcStepName.textContent = steps[3] : calcStepName.textContent = steps[2];
-        calcInfo.category === 'Квартира' ? document.querySelector('.sizeRooms').classList.remove('hidden') : document.querySelector('.size').classList.remove('hidden');
-        calcProgress.style.width = '45%';
-        if (calcInfo.category === 'Участок')
-          calcStepName.textContent += ('(Сот)');
-        if (calcInfo.category === 'Юр. Лицо' || calcInfo.category === 'Дом')
-          calcStepName.textContent += ('(м)');
-          progress.textContent = '50%';
-        step ++;
+        if (calcInfo.category && calcInfo.category != 'Не выбрано') {
+          calcControlls.forEach(el => {
+            el.classList.add('hidden');
+          });
+          calcInfo.category === 'Квартира' ? calcStepName.textContent = steps[3] : calcStepName.textContent = steps[2];
+          calcInfo.category === 'Квартира' ? document.querySelector('.sizeRooms').classList.remove('hidden') : document.querySelector('.size').classList.remove('hidden');
+          calcProgress.style.width = '45%';
+          if (calcInfo.category === 'Участок')
+            calcStepName.textContent += ('(Сот)');
+          if (calcInfo.category === 'Юр. Лицо' || calcInfo.category === 'Дом')
+            calcStepName.textContent += ('(м)');
+            progress.textContent = '50%';
+          step ++;
+        }
         break;
       case 2:
         if (calcInfo.category !== 'Квартира')
@@ -348,19 +377,29 @@ function onCalcNextBtnClick(e) {
           calcInfo.size = document.querySelector('.sizeRooms')
                                   .querySelector('.selected').textContent;
         }
-        document.querySelector('.phone').classList.remove('hidden');
-        calcStepName.textContent = steps[4];
-        calcProgress.style.width = '65%';
-        progress.textContent = '75%';
-        step ++;
-        calcStepName.textContent += calcPrice() + 'р';
+        if (calcInfo.size && calcInfo.size != 'Не выбрано' && calcInfo.size != '0') {
+          calcControlls.forEach(el => {
+            el.classList.add('hidden');
+          });
+          document.querySelector('.phone').classList.remove('hidden');
+          calcStepName.textContent = steps[4];
+          calcProgress.style.width = '65%';
+          progress.textContent = '75%';
+          step ++;
+          calcStepName.textContent += calcPrice() + 'р';
+        }
         break;
       case 3:
         calcInfo.phone = document.querySelector('.phone')
                                 .querySelector('.calculator__input').value;
-        calcStepName.textContent = steps[5];
-        calcProgress.style.width = '85%';
-        progress.textContent = '100%';
+        if (calcInfo.phone && calcInfo.phone != 'Не выбрано' && calcInfo.phone != '0') {
+          calcControlls.forEach(el => {
+            el.classList.add('hidden');
+          });
+          calcStepName.textContent = steps[5];
+          calcProgress.style.width = '85%';
+          progress.textContent = '100%';
+        }
         break;
     }
 
@@ -371,7 +410,7 @@ function onCalcNextBtnClick(e) {
     resetStep(e);
   }
 
-  if (this.classList.contains('calculator__last--btn')) {
+  if (this.classList.contains('calculator__last--btn') && calcInfo.phone && calcInfo.phone != 'Не выбрано' && calcInfo.phone != '0') {
     Request(calcInfo.phone, calcInfo.insec, calcInfo.category, calcInfo.size);
   }
 }
@@ -463,7 +502,7 @@ function calcPrice() {
       case 'Кимовск':
         if (size < 100)
           return 2500;
-        if (size > 100)
+        if (size >= 100)
           return 4500;
         break;
       case 'Тула':
@@ -472,7 +511,7 @@ function calcPrice() {
       case 'Киреевск':
         if (size < 100)
           return 3000;
-        if (size > 100)
+        if (size >= 100)
           return 5000;
         break;
       case 'Алексин':
@@ -485,14 +524,14 @@ function calcPrice() {
       case 'Орел':
         if (size < 100)
           return 3500;
-        if (size > 100)
+        if (size >= 100)
           return 5500;
         break;
       case 'Рязань':
       case 'Калуга':
         if (size < 100)
           return 4000;
-        if (size > 100)
+        if (size >= 100)
           return 6000;
         break;
     }
@@ -507,7 +546,7 @@ function calcPrice() {
         switch (size) {
           case 'Комната':
             return 900;
-          case '1 комнатаная':
+          case '1 комнатная':
             return 1800;
           case '2-х комнатная':
             return 2200;
@@ -524,7 +563,7 @@ function calcPrice() {
         switch (size) {
           case 'Комната':
             return 1100;
-          case '1 комнатаная':
+          case '1 комнатная':
             return 2000;
           case '2-х комнатная':
             return 2500;
@@ -540,7 +579,7 @@ function calcPrice() {
         switch (size) {
           case 'Комната':
             return 1500;
-          case '1 комнатаная':
+          case '1 комнатная':
             return 3000;
           case '2-х комнатная':
             return 3200;
@@ -557,7 +596,7 @@ function calcPrice() {
         switch (size) {
           case 'Комната':
             return 1300;
-          case '1 комнатаная':
+          case '1 комнатная':
             return 2500;
           case '2-х комнатная':
             return 3000;
@@ -571,7 +610,7 @@ function calcPrice() {
         switch (size) {
           case 'Комната':
             return 2000;
-          case '1 комнатаная':
+          case '1 комнатная':
             return 3500;
           case '2-х комнатная':
             return 3700;
