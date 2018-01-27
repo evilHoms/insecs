@@ -8,6 +8,7 @@ function Request(phone = 'телефон не указан', type = 'вид не
   formdata.append('phone', phone);
   formdata.append('category', category);
   formdata.append('size', size);
+  formdata.append('city', document.querySelector('.top__city--text'));
   const url = 'mail.php';
   const options = { 
     method: 'POST',
@@ -153,7 +154,7 @@ function setDataFromCity(city) {
       msk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.2459887661303!2d37.61096821626544!3d55.78896638056302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a05fc23869d%3A0x4d9372252746cb32!2z0J7QutGC0Y_QsdGA0YzRgdC60LDRjyDRg9C7LiwgMzMsINCc0L7RgdC60LLQsCwgMTI3MDE4!5e0!3m2!1sru!2sru!4v1516279697383" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
       tyla: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.6393604630525!2d37.59063171621754!3d54.18646258016358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413440769a06c331%3A0xe354974309eb0032!2z0YPQuy4g0KTRgNGD0L3Qt9C1LCA0Miwg0KLRg9C70LAsINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC7LiwgMzAwMDM0!5e0!3m2!1sru!2sru!4v1516280023790" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
       aliksin: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2317.028274743489!2d37.06479381622672!3d54.49772478023651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4134f0df75e7c90b%3A0x5354eab5eded279!2z0YPQuy4g0JvQtdC90LjQvdCwLCAyMiwg0JDQu9C10LrRgdC40L0sINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC7LiwgMzAxMzYy!5e0!3m2!1sru!2sru!4v1516280145559" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
-      nvmsk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2346.3794190049452!2d38.3075473162113!3d53.97828718011631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41369967f3bf7401%3A0x1f934ca735c93189!2z0J3QvtCy0L7QvNC-0YHQutC-0LLRgdC60LDRjyDRg9C7LiwgNTgsINCU0L7QvdGB0LrQvtC5LCDQotGD0LvRjNGB0LrQsNGPINC-0LHQuy4sIDMwMTc3Mw!5e0!3m2!1sru!2sru!4v1516361305705" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      nvmsk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.7723081549984!2d38.29025031621212!3d54.00681698012278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41369c05d6fd9751%3A0x8eecd2db5301000b!2z0YPQuy4g0KjQsNGF0YLQtdGA0L7QsiwgMTYsINCd0L7QstC-0LzQvtGB0LrQvtCy0YHQuiwg0KLRg9C70YzRgdC60LDRjyDQvtCx0LsuLCAzMDE2NjQ!5e0!3m2!1sru!2sru!4v1516801949144" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
       zhelenogorsk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.6282705402023!2d35.36121051616328!3d52.340889479780735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412dd75cc048f745%3A0xb4984b0c289c09d8!2z0YPQuy4g0JPQsNCz0LDRgNC40L3QsCwgMTEsINCW0LXQu9C10LfQvdC-0LPQvtGA0YHQuiwg0JrRg9GA0YHQutCw0Y8g0L7QsdC7LiwgMzA3MTcx!5e0!3m2!1sru!2sru!4v1516280191400" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
       bransk: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2387.3530267365513!2d34.351438316189686!3d53.24737297995838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412d585c184dc599%3A0xbe2b4bdb6c0b1bee!2z0YPQuy4g0KHQvtCy0LXRgtGB0LrQsNGPLCAxNywg0JHRgNGP0L3RgdC6LCDQkdGA0Y_QvdGB0LrQsNGPINC-0LHQuy4sIDI0MTA1MA!5e0!3m2!1sru!2sru!4v1516280226725" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
       orel: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.4995702975098!2d36.062212216181265!3d52.9574269798994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41321a77bbe42329%3A0xa03b8eeb6451a45c!2z0YPQuy4g0JrQvtC80YHQvtC80L7Qu9GM0YHQutCw0Y8sIDUwLCDQntGA0ZHQuywg0J7RgNC70L7QstGB0LrQsNGPINC-0LHQuy4sIDMwMjAwMQ!5e0!3m2!1sru!2sru!4v1516280270877" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
@@ -166,14 +167,14 @@ function setDataFromCity(city) {
       case 'Щекино':
       case 'Болохово':
       case 'Киреевск':
-        contactAdress.textContent = 'Тула, Фрунзе, 42';
+        contactAdress.textContent = 'г. Тула, Фрунзе, 42';
         contactMap.innerHTML = maps.tyla;
         break;
       case 'Новомосковск':
       case 'Донской':
       case 'Узловая':
       case 'Кимовск':
-        contactAdress.textContent = 'г. Донской, Новомосковская, 58';
+        contactAdress.textContent = 'г. Новомосковск, ул. Шахтеров, 16/8';
         contactMap.innerHTML = maps.nvmsk;
         break;
       case 'Алексин':
