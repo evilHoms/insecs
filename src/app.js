@@ -8,7 +8,7 @@ function Request(phone = 'телефон не указан', type = 'вид не
   formdata.append('phone', phone);
   formdata.append('category', category);
   formdata.append('size', size);
-  formdata.append('city', document.querySelector('.top__city--text'));
+  formdata.append('city', document.querySelector('.top__city--text').textContent);
   const url = 'mail.php';
   const options = { 
     method: 'POST',
